@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="ジャグラー,設定推測,ツール,ぶどう">
+	<meta name="description" content="ジャグラーシリーズの設定推測ツールです">
+	<title>ジャグラー設定推測ツール</title>
+	<link rel="stylesheet" href="dist/css/mycss.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>ジャグラー設定推測ツール</h1>
+		</div>
+	</header>
+
+	<section>
+		<div class="container">
+			<p><select name="kishu" id="kishu">
+				<option value="neoim" selected>ネオアイムジャグラーEX</option>
+				<option value="my5">マイジャグラー5</option>
+				<option value="funky2">ファンキージャグラー2</option>
+				<option value="happy3">ハッピージャグラーV3</option>
+				<option value="gogo3">ゴーゴージャグラー3</option>
+				<option value="girls">ジャグラーガールズ</option>
+				<option value="mr">ミスタージャグラー</option>
+				<option value="umiracle">ウルトラミラクルジャグラー</option>
+			</select></p>
+
+			<div class="flex">
+				<label for="s_game">sｹﾞｰﾑ</label>
+				<input type="tel" size="4" maxlength="6" name="s_game" id="s_game" onclick="this.select(0,this.value.length);" placeholder="打ち始め">
+			</div>
+
+			<div class="flex">
+				<label for="s_big">sBIG</label>
+				<input type="tel" size="4" maxlength="4" name="s_big" id="s_big" onclick="this.select(0,this.value.length);" placeholder="打ち始め">
+			</div>
+
+			<div class="flex">
+				<label for="s_reg">sREG</label>
+				<input type="tel" size="4" maxlength="4" name="s_reg" id="s_reg" onclick="this.select(0,this.value.length);" placeholder="打ち始め">
+			</div>
+
+			<div class="flex">
+				<label for="e_game">ｹﾞｰﾑ</label>
+				<input type="tel" size="4" maxlength="6" name="e_game" id="e_game" onclick="this.select(0,this.value.length);" placeholder="現在">
+			</div>
+
+			<div class="flex">
+				<label for="e_big">BIG</label>
+				<input type="tel" size="4" maxlength="4" name="e_big" id="e_big" onclick="this.select(0,this.value.length);" placeholder="現在">
+			</div>
+
+			<div class="flex">
+				<label for="e_reg">REG</label>
+				<input type="tel" size="4" maxlength="4" name="e_reg" id="e_reg" onclick="this.select(0,this.value.length);" placeholder="現在">
+			</div>
+
+			<div id="input_form"></div>
+
+ 			<p class="flex"><button type="button" id="suisoku">設定推測</button>　<button type="reset" id="reset">リセット</button></p>
+
+			<div id="output"></div>
+			<div id="memo"></div>
+		</div>
+	</section>
+
+	<footer>
+		Copyright &copy; <script type="text/javascript">myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);</script> akicompany. All Rights Reserved.
+	</footer>
+	<script src="dist/js/jquery.min.js"></script>
+	<script src="dist/js/myjs.js"></script>
+</body>
+</html>
