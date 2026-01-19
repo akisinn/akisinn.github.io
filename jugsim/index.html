@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ジャグラーシミュレータ</title>
+	<link rel="stylesheet" href="dist/css/mycss.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>ジャグラーシミュレータ</h1>
+		</div>
+	</header>
+
+	<section>
+		<div class="container">
+ 			<div class="flex">
+				<label for="kishu">機種</label>
+				<select name="kishu" id="kishu">
+					<option value="neoim" selected>ネオアイムジャグラーEX</option>
+					<option value="my5">マイジャグラー5</option>
+					<option value="funky2">ファンキージャグラー2</option>
+					<option value="happy3">ハッピージャグラーV3</option>
+					<option value="gogo3">ゴーゴージャグラー3</option>
+					<option value="girls">ジャグラーガールズ</option>
+					<option value="mr">ミスタージャグラー</option>
+					<option value="ultramiracle">ウルトラミラクルジャグラー</option>
+	 			</select>
+ 			</div>
+
+ 			<div class="flex">
+				<label for="settei">設定</label>
+				<select name="settei" id="settei">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5" selected>5</option>
+					<option value="6">6</option>
+					<option value="r">ランダム</option>
+	 			</select>
+ 			</div>
+
+			<div class="flex">
+				<label for="game">ｹﾞｰﾑ</label>
+				<input type="tel" size="4" maxlength="10" name="game" id="game" value="9000" onclick="this.select(0,this.value.length);">
+			</div>
+			<div class="flex">
+				<label for="game">貸出枚数</label>
+				<input type="tel" size="4" maxlength="10" name="kasidasi" id="kasidasi" value="46" onclick="this.select(0,this.value.length);">
+			</div>
+			<div class="flex">
+				<label for="game">交換枚数</label>
+				<input type="tel" size="4" maxlength="10" name="koukan" id="koukan" value="52" onclick="this.select(0,this.value.length);">
+			</div>
+
+ 			<p class="flex"><button type="button" id="sim1">シミュレート</button></p>
+
+			<div id="output"></div>
+
+ 			<p class="flex"><button type="button" id="sim2">もう１回</button></p>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			Copyright &copy; <script type="text/javascript">myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);</script> <a href="http://akicompany.com/" target="_blank">akicompany</a>. All Rights Reserved.
+		</div>
+	</footer>
+	<script src="dist/js/jquery.min.js"></script>
+	<script src="dist/js/myjs.js"></script>
+</body>
+</html>
