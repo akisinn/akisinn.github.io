@@ -27,11 +27,12 @@
 				kishu.kikaiwari = [98.04,99.22,100.98,103.37,105.73,109.37];
 				kishu.name_input = [];
 				kishu.maxlength_input = [];
-				kishu.name_prm = ["ぶどう"];
-				kishu.maxlength_prm = [4];
-				kishu.calcvar_prm = ["sa_game"];
-				kishu.decimaldigits_prm = [2];
+				kishu.name_prm = ["ﾁｪﾘｰ","ぶどう"];
+				kishu.maxlength_prm = [4,4];
+				kishu.calcvar_prm = ["sa_game","sa_game"];
+				kishu.decimaldigits_prm = [1,2];
 				kishu.p_prm = [
+					[37.22,37.22,37.22,37.09,36.13,35.48],
 					[5.93,5.93,5.93,5.93,5.87,5.81]
 				];
 				kishu.memo = "\
