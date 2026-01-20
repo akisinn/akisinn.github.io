@@ -54,14 +54,13 @@
 				kishu.kikaiwari = [99.5,100.52,102.37,105.24,108.09,109.89];
 				kishu.prm1 = 240;
 				kishu.prm2 = 96;
-				// 値不明のためハッピーの数値を使用
 				kishu.prm3 = 0.411;
 				switch (cherry_f) {
 					case '0':
-						kishu.prm4 = 0.1087;
+						kishu.prm4 = 0.159723;
 						break;
 					case '1':
-						kishu.prm4 = 0.0662;
+						kishu.prm4 = 0.088723;
 						break;
 				}
 				break;
