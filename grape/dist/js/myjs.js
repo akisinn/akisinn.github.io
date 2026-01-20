@@ -264,17 +264,8 @@
 
 		// ぶどう確率計算とぶどう回数
 		var u_grape;
-		switch(kishu.name) {
-			case 'girls':
-			case 'mr':
-				u_grape = game/((((game*3)+((big+reg)*0.75))-((big*kishu.prm1)+(reg*kishu.prm2)+(game*kishu.prm3))+samai)/8);
-				break;
-			
-			default:
-				u_grape = game/(((samai-(samai*2))-((game*3)-((big*kishu.prm1)+(reg*kishu.prm2)+(game*kishu.prm3)+(game*kishu.prm4))))/8)-(game/(((samai-(samai*2))-((game*3)-((big*kishu.prm1)+(reg*kishu.prm2)+(game*kishu.prm3)+(game*kishu.prm4))))/8)*2);
-				break;
-		}
-		
+		u_grape = game/(((samai-(samai*2))-((game*3)-((big*kishu.prm1)+(reg*kishu.prm2)+(game*kishu.prm3)+(game*kishu.prm4))))/8)-(game/(((samai-(samai*2))-((game*3)-((big*kishu.prm1)+(reg*kishu.prm2)+(game*kishu.prm3)+(game*kishu.prm4))))/8)*2);
+
 		if (isNaN(u_grape)) {
 			var u_grape = '-';
 			var grape = '';
