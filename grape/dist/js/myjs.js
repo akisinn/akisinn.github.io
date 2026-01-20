@@ -30,8 +30,8 @@
 				kishu.p_grape = [5.93,5.93,5.93,5.93,5.87,5.81];
 				kishu.header = 'ぶどう';
 				kishu.kikaiwari = [98.04,99.22,100.98,103.37,105.73,109.37];
-				kishu.prm1 = 240;
-				kishu.prm2 = 96;
+				kishu.prm1 = 239;
+				kishu.prm2 = 95;
 				// 値不明のためガールズの数値を使用
 				kishu.prm3 = 0.411;
 				switch (cherry_f) {
@@ -52,8 +52,8 @@
 				kishu.p_grape = [6.29,6.22,6.15,6.09,6.02,5.96];
 				kishu.header = 'ぶどう';
 				kishu.kikaiwari = [99.5,100.52,102.37,105.24,108.09,109.89];
-				kishu.prm1 = 240;
-				kishu.prm2 = 96;
+				kishu.prm1 = 239;
+				kishu.prm2 = 95;
 				kishu.prm3 = 0.411;
 				switch (cherry_f) {
 					case '0':
@@ -73,8 +73,8 @@
 				kishu.p_grape = [5.98,5.98,5.98,5.98,5.88,5.83];
 				kishu.header = 'ぶどう';
 				kishu.kikaiwari = [98.19,99.12,101.19,103.51,105.42,108.94];
-				kishu.prm1 = 240;
-				kishu.prm2 = 96;
+				kishu.prm1 = 239;
+				kishu.prm2 = 95;
 				kishu.prm3 = 0.411;
 				switch (cherry_f) {
 					case '0':
