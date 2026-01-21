@@ -207,7 +207,7 @@
 						kishu.prm4 = 0.06068;
 						break;
 					case '1':
-						kishu.prm4 = 0.0662;
+						kishu.prm4 = 0.040475;
 						break;
 				}
 				break;
