@@ -260,7 +260,9 @@
 		var game = Number(document.getElementById('game').value);
 		var big = Number(document.getElementById('big').value);
 		var reg = Number(document.getElementById('reg').value);
-		var samai = Number(document.getElementById('samai').value);
+		//var samai = Number(document.getElementById('samai').value);
+		var samai_tmp = document.getElementById('samai').value;
+		var samai = Number(samai_tmp.replace(/[#*]/g, "-"));
 
 		// ぶどう確率計算とぶどう回数
 		var u_grape;
