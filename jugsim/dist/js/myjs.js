@@ -1,6 +1,8 @@
 (function() {
 	'use strict';
 
+	const SEED = 65536;
+
 	function rdm(p) {
 		if(Math.random() < p) {
 			return true;
@@ -221,63 +223,63 @@
 		var koukan = Number(document.getElementById('koukan').value);
 
 		// makeBox
-		var box = new Array(16384);
+		var box = new Array(SEED);
 		var pointer = 0;
 		if(p_tbig[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_tbig[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_tbig[settei-1]);i++) {
 				box[pointer] = 'tbig';
 				pointer++;
 			}
 		}
 		if(p_cbig[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_cbig[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_cbig[settei-1]);i++) {
 				box[pointer] = 'cbig';
 				pointer++;
 			}
 		}
 		if(p_treg[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_treg[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_treg[settei-1]);i++) {
 				box[pointer] = 'treg';
 				pointer++;
 			}
 		}
 		if(p_creg[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_creg[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_creg[settei-1]);i++) {
 				box[pointer] = 'creg';
 				pointer++;
 			}
 		}
 		if(p_grape[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_grape[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_grape[settei-1]);i++) {
 				box[pointer] = 'grape';
 				pointer++;
 			}
 		}
 		if(p_replay[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_replay[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_replay[settei-1]);i++) {
 				box[pointer] = 'replay';
 				pointer++;
 			}
 		}
 		if(p_cherry[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_cherry[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_cherry[settei-1]);i++) {
 				box[pointer] = 'cherry';
 				pointer++;
 			}
 		}
 		if(p_bell[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_bell[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_bell[settei-1]);i++) {
 				box[pointer] = 'bell';
 				pointer++;
 			}
 		}
 		if(p_pierrot[settei-1] !== 0) {
-			for(var i=0;i<Math.round(16384/p_pierrot[settei-1]);i++) {
+			for(var i=0;i<Math.round(SEED/p_pierrot[settei-1]);i++) {
 				box[pointer] = 'pierrot';
 				pointer++;
 			}
 		}
-		for(;pointer<16384;pointer++) {
+		for(;pointer<SEED;pointer++) {
 			box[pointer] = 'hazure';
 		}
 
@@ -311,7 +313,7 @@
 			samai -= 3;
 			in_maisu += 3;
 
-			switch(box[Math.floor(Math.random()*16384)]) {
+			switch(box[Math.floor(Math.random()*SEED)]) {
 				case 'tbig':
 					n_tbig++;
 					out_maisu += mai_big - 1;
