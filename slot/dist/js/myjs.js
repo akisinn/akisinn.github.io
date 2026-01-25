@@ -220,6 +220,36 @@
 				"
 				break;
 
+			case 'newhanabi':
+				kishu.settei = [1,2,5,6];
+				kishu.p_big = [277.7,268.6,256.0,248.2];
+				kishu.p_reg = [356.2,331.0,306.2,280.1];
+				kishu.p_gousei = [156.0,148.3,139.4,131.6];
+				kishu.kikaiwari = [102.0,104.0,106.5,109.0];
+				kishu.name_input = ["BIGｹﾞｰﾑ<br>(29)","HCｹﾞｰﾑ<br>(20)","HGｹﾞｰﾑ<br>(20)"];
+				kishu.maxlength_input = [4,4,4];
+				kishu.name_prm = ["ﾁｪﾘｰ","氷","風鈴","BIG<br>斜め風鈴","BIG<br>ﾊﾞﾗｹ目","HC<br>ﾘﾌﾟﾚｲ","HC<br>ﾊｽﾞﾚ","HG<br>RTﾘﾌﾟﾚｲ","HG<br>ﾊｽﾞﾚ"];
+				kishu.maxlength_prm = [4,4,4,4,4,4,4,4,4];
+				kishu.calcvar_prm = ["sa_game","sa_game","sa_game","n_input[0]","n_input[0]","n_input[1]","n_input[1]","n_input[2]","n_input[2]"];
+				kishu.decimaldigits_prm = [1,1,1,1,0,1,1,2,1];
+				kishu.p_prm = [
+					[16.4,15.3,16.1,15.6],
+					[51.2,51.8,48.2,49.3],
+					[7.66,7.64,7.45,7.29],
+					[11.0,9.0,11.0,9.0],
+					[16384,16384,16384,655.4],
+					[3.0,3.1,3.3,3.4],
+					[6.0,5.8,5.3,5.1],
+					[1.75,1.78,1.85,1.89],
+					[13.4,12.4,10.1,9.5]
+				];
+				kishu.memo = "\
+				REG打ち方:中ﾘｰﾙ中下段赤7→左ﾘｰﾙ中下段赤7→右ﾘｰﾙ下段枠下赤7<br>\
+				REG終了画面ﾋﾟｰｽ花火:2以上,REG氷ﾃﾝﾊﾟｲﾊｽﾞﾚ:5以上<br>\
+				<img src='https://psmaga.com/db/s_conq/across_slot/19/img/r01.png'><br>\
+				"
+				break;
+
 			default:
 				kishu.settei = [1,2,3,4,5,6];
 				kishu.p_big = [273.1,269.7,269.7,259.0,259.0,255.0];
