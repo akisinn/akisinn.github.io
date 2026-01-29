@@ -42,7 +42,8 @@
 
 		ItemList = document.getElementsByClassName("samai"); 
 		for(let i = 0; i < ItemList.length; i++) {
-			samai_t += Number(ItemList.item(i).value);
+			var samai_tmp = ItemList.item(i).value;
+			samai_t += Number(samai_tmp.replace(/[#*]/g, "-"));
 		}
 
 		// calc
@@ -76,13 +77,12 @@
 		if(game_t == 0) {
 			var kikaiwari = '-';
 		} else {
-			var kikaiwari = (((samai_t+(3*game_t))/(3*game_t))*100).toFixed(1) + '%';
+			var kikaiwari = (((samai_t/(3*game_t))+1)*100).toFixed(1) + '%';
 		}
 
 		// output
-		var output = 'game_t: ' + String(game_t) + ' , big_t: ' + String(big_t) + ' , reg_t: ' + String(reg_t) + ' , samai_t: ' + String(samai_t) + '<br>';
-		//output += 'game_avg: ' + String(game_a) + ' , samai_avg: ' + String(samai_a) + '<br>';
-		output += 'big_p: ' + String(big_p) + ' , reg_p: ' + String(reg_p) + ' , gousei_p: ' + String(gousei_p) + '<br>';
+		var output = 'ｹﾞｰﾑ数: ' + String(game_t) + ' , BIG: ' + String(big_t) + '回 , REG: ' + String(reg_t) + '回 , 差枚: ' + String(samai_t) + '枚<br>';
+		output += 'BIG確率: ' + String(big_p) + ' , REG確率: ' + String(reg_p) + ' , 合成確率: ' + String(gousei_p) + '<br>';
 		output += '機械割: ' + String(kikaiwari);
 		document.getElementById('output').innerHTML = output;
 	}
