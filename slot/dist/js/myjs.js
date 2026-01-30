@@ -27,7 +27,7 @@
 				kishu.kikaiwari = [98.04,99.22,100.98,103.37,105.73,109.37];
 				kishu.name_input = [];
 				kishu.maxlength_input = [];
-				kishu.name_prm = ["ﾁｪﾘｰ","ぶどう"];
+				kishu.name_prm = ["非重複<br>ﾁｪﾘｰ","ぶどう"];
 				kishu.maxlength_prm = [4,4];
 				kishu.calcvar_prm = ["sa_game","sa_game"];
 				kishu.decimaldigits_prm = [1,2];
@@ -68,7 +68,7 @@
 				kishu.kikaiwari = [98.09,99.02,101.09,103.42,105.32,108.84];
 				kishu.name_input = [];
 				kishu.maxlength_input = [];
-				kishu.name_prm = ["ﾁｪﾘｰ","ぶどう"];
+				kishu.name_prm = ["非重複<br>ﾁｪﾘｰ","ぶどう"];
 				kishu.maxlength_prm = [4,4];
 				kishu.calcvar_prm = ["sa_game","sa_game"];
 				kishu.decimaldigits_prm = [1,2];
