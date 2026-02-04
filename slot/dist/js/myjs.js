@@ -12,8 +12,12 @@
 		return 100/p;
 	}
 
-	function gousei(a,b) {
+	function gousei2(a,b) {
 		return (a*b)/(a+b);
+	}
+
+	function gousei3(a,b,c) {
+		return gousei2((a*b)/(a+b),c);
 	}
 
 	// 機種情報を取得
@@ -247,6 +251,35 @@
 				REG打ち方:中ﾘｰﾙ中下段赤7→左ﾘｰﾙ中下段赤7→右ﾘｰﾙ下段枠下赤7<br>\
 				REG終了画面ﾋﾟｰｽ花火:2以上,REG氷ﾃﾝﾊﾟｲﾊｽﾞﾚ:5以上<br>\
 				<img src='https://psmaga.com/db/s_conq/across_slot/19/img/r01.png'><br>\
+				"
+				break;
+
+			case 'lhanabi':
+				kishu.settei = [1,2,5,6];
+				kishu.p_big = [297.9,292.6,284.9,273.1];
+				kishu.p_reg = [394.8,358.1,313.6,282.5];
+				kishu.p_gousei = [169.8,161.0,149.3,138.8];
+				kishu.kikaiwari = [100.2,102.0,104.6,108.0];
+				kishu.name_input = ["BIGｹﾞｰﾑ<br>(20)","HCｹﾞｰﾑ<br>(20)","HGｹﾞｰﾑ<br>(20)"];
+				kishu.maxlength_input = [4,4,4];
+				kishu.name_prm = ["ﾁｪﾘｰ","氷","風鈴","BIG<br>斜め風鈴","BIG<br>ﾊﾞﾗｹ目","HC<br>ﾘﾌﾟﾚｲ","HC<br>ﾊｽﾞﾚ","HG<br>RTﾘﾌﾟﾚｲ","HG<br>ﾊｽﾞﾚ"];
+				kishu.maxlength_prm = [4,4,4,4,4,4,4,4,4];
+				kishu.calcvar_prm = ["sa_game","sa_game","sa_game","n_input[0]","n_input[0]","n_input[1]","n_input[1]","n_input[2]","n_input[2]"];
+				kishu.decimaldigits_prm = [1,1,2,1,0,1,1,1,1];
+				kishu.p_prm = [
+					[gousei3(99.4,21.0,307.7),gousei3(99.4,19.4,306.2),gousei3(99.4,20.5,300.6),gousei3(99.4,19.6,297.9)],
+					[gousei2(46.3,1560.4),gousei2(47.3,1560.4),gousei2(46.2,1560.4),gousei2(47.4,1560.4)],
+					[9.68,9.45,9.06,8.64],
+					[10.0,7.0,10.0,7.0],
+					[16384,16384,819.2,819.2],
+					[3.2,3.4,3.6,3.7],
+					[4.7,4.5,4.3,4.2],
+					[1.9,2.0,2.1,2.1],
+					[6.4,6.0,5.4,5.4]
+				];
+				kishu.memo = "\
+				REG終了画面ﾋﾟｰｽ花火:2以上,REGﾊﾞﾗｹ目:6(1-5:1/16384,6:1/1092)<br>\
+				<img src='https://machine-image.p-world.co.jp/uploads/lhanabi-reel.jpg?1769996172479'><br>\
 				"
 				break;
 
