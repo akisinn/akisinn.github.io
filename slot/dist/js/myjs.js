@@ -279,7 +279,36 @@
 				];
 				kishu.memo = "\
 				REG終了画面ﾋﾟｰｽ花火:2以上,REGﾊﾞﾗｹ目:6(1-5:1/16384,6:1/1092)<br>\
-				<img src='https://machine-image.p-world.co.jp/uploads/lhanabi-reel.jpg?1769996172479'><br>\
+				<img src='https://cms-assets.nilto.com/spaces/211853270/media/937700794/_/hanabi_r01.png'><br>\
+				"
+				break;
+
+			case 'monkeyturnv':
+				kishu.settei = [1,2,4,5,6];
+				kishu.p_big = [0,0,0,0,0];
+				kishu.p_reg = [299.8,295.5,258.8,235.7,222.9];
+				kishu.p_gousei = [0,0,0,0,0];
+				kishu.kikaiwari = [97.9,98.9,104.5,110.2,114.9];
+				kishu.name_input = ["AT回数"];
+				kishu.maxlength_input = [4];
+				kishu.name_prm = ["5枚役","AT終了時<BR>即優出","強ﾁｪﾘｰ/強ﾁｬﾝｽ目AT直撃"];
+				kishu.maxlength_prm = [4,4,4];
+				kishu.calcvar_prm = ["sa_game","n_input[0]","sa_game"];
+				kishu.decimaldigits_prm = [1,1,1];
+				kishu.p_prm = [
+					[38.15,36.86,30.27,24.51,22.53],
+					[PtoB(1.6),PtoB(1.7),PtoB(2.2),PtoB(3.0),PtoB(3.7)],
+					[PtoB(0.4),PtoB(1.2),PtoB(2.0),PtoB(3.9),PtoB(6.3)]
+				];
+				kishu.memo = "\
+				天井:通常時795G/6周期目規定ﾎﾟｲﾝﾄ到達<br>\
+				AT直撃 ﾎﾞｰﾄ/弱ﾁｪﾘｰ/弱ﾁｬﾝｽ目:4以上<br>\
+				舟券 金:4以上,虹:6<br>\
+				ﾗｳﾝﾄﾞ開始画面 ｹﾛｯﾄ:5以上,青島&波多野:5以上<br>\
+				獲得枚数表示 456枚:4以上,803枚:5以上,666枚:6<br>\
+				AT終了画面 銅ﾄﾛ:2以上,金ﾄﾛ:4以上,ｹﾛｯﾄﾄﾛ:5以上,虹ﾄﾛ:6<br>\
+				ｴﾝﾃﾞｨﾝｸﾞ中ｾﾘﾌ これが艇王と呼ばれる～:4以上,きたきたきたぁーー！:5以上,おめでとう！:6<br>\
+				<img src='https://psmaga.com/db/s_conq/yamasa_slot/251/img/r01.png'><br>\
 				"
 				break;
 
