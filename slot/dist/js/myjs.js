@@ -17,7 +17,15 @@
 	}
 
 	function gousei3(a,b,c) {
-		return gousei2((a*b)/(a+b),c);
+		return gousei2(gousei2(a,b),c);
+	}
+
+	function gousei4(a,b,c,d) {
+		return gousei2(gousei3(a,b,c),d);
+	}
+
+	function gousei5(a,b,c,d,e) {
+		return gousei2(gousei4(a,b,c,d),e);
 	}
 
 	// 機種情報を取得
@@ -140,7 +148,7 @@
 				kishu.p_big = [273.1,270.8,263.2,254.0,239.2,226.0];
 				kishu.p_reg = [397.2,362.1,332.7,300.6,273.1,256.0];
 				kishu.p_gousei = [161.8,154.9,146.9,137.7,127.5,120.0];
-				kishu.kikaiwari = [97.90,99.15,101.00,104.20,107.45,110.34];
+				kishu.kikaiwari = [98.78,100.03,101.89,105.08,108.33,111.22];
 				kishu.name_input = [];
 				kishu.maxlength_input = [];
 				kishu.name_prm = ["単独<br>BIG","ﾁｪﾘｰ<br>BIG","単独<br>REG","ﾁｪﾘｰ<br>REG","ぶどう"];
@@ -148,8 +156,8 @@
 				kishu.calcvar_prm = ["sa_game","sa_game","sa_game","sa_game","sa_game"];
 				kishu.decimaldigits_prm = [0,0,0,0,2];
 				kishu.p_prm = [
-					[436.9,431.2,412.2,414.8,376.6,344.9],
-					[1489.5,1489.5,1489.5,1213.6,1213.6,1213.6],
+					[gousei3(436.9,4096.0,6553.6),gousei3(431.2,4096.0,6553.6),gousei3(412.2,4096.0,6553.6),gousei3(414.8,4096.0,6553.6),gousei3(376.6,4096.0,6553.6),gousei3(344.9,4096.0,6553.6)],
+					[gousei3(1489.5,6553.6,6553.6),gousei3(1489.5,6553.6,6553.6),gousei3(1489.5,6553.6,6553.6),gousei3(1213.6,6553.6,6553.6),gousei3(1213.6,6553.6,6553.6),gousei3(1213.6,6553.6,6553.6)],
 					[636.3,569.9,532.8,478.4,436.9,425.6],
 					[1057.0,993.0,885.6,809.1,728.2,642.5],
 					[6.04,6.01,5.98,5.84,5.81,5.79]
