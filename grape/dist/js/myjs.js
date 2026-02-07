@@ -157,7 +157,7 @@
 				kishu.p_grape = [6.04,6.01,5.98,5.84,5.81,5.79];
 				kishu.header = 'ぶどう';
 				kishu.kikaiwari = [98.78,100.03,101.89,105.08,108.33,111.22];
-				kishu.prm1 = 239.25;
+				kishu.prm1 = 239.7;
 				kishu.prm2 = 95.7;
 				kishu.prm3 = 0.411;
 				switch (cherry_f) {
