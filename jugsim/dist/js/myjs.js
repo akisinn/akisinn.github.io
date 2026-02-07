@@ -11,16 +11,24 @@
 		}
 	}
 
-	function notCherry(a,b) {
-		return (a*b)/(b-1);
-	}
-
 	function PtoB(p) {
 		return 100/p;
 	}
 
-	function gousei(a,b) {
+	function gousei2(a,b) {
 		return (a*b)/(a+b);
+	}
+
+	function gousei3(a,b,c) {
+		return gousei2(gousei2(a,b),c);
+	}
+
+	function gousei4(a,b,c,d) {
+		return gousei2(gousei3(a,b,c),d);
+	}
+
+	function gousei5(a,b,c,d,e) {
+		return gousei2(gousei4(a,b,c,d),e);
 	}
 
 	window.onload = function(){
@@ -137,8 +145,8 @@
 			case 'happy3':
 				var mai_big = 240;
 				var mai_reg = 96;
-				var p_tbig = [436.9,431.2,412.2,414.8,376.6,344.9];
-				var p_cbig = [1489.5,1489.5,1489.5,1213.6,1213.6,1213.6];
+				var p_tbig = [gousei3(436.9,4096.0,6553.6),gousei3(431.2,4096.0,6553.6),gousei3(412.2,4096.0,6553.6),gousei3(414.8,4096.0,6553.6),gousei3(376.6,4096.0,6553.6),gousei3(344.9,4096.0,6553.6)];
+				var p_cbig = [gousei3(1489.5,6553.6,6553.6),gousei3(1489.5,6553.6,6553.6),gousei3(1489.5,6553.6,6553.6),gousei3(1213.6,6553.6,6553.6),gousei3(1213.6,6553.6,6553.6),gousei3(1213.6,6553.6,6553.6)];
 				var p_treg = [636.3,569.9,532.8,478.4,436.9,425.6];
 				var p_creg = [1057.0,993.0,885.6,809.1,728.2,642.5];
 				var p_grape = [6.04,6.01,5.98,5.84,5.81,5.79];
@@ -331,9 +339,9 @@
 					break;
 				case 'cbig':
 					n_cbig++;
-					out_maisu += 2;
+					out_maisu += mai_cherry;
 					out_maisu += mai_big - 1;
-					samai += 2;
+					samai += mai_cherry;
 					samai += mai_big - 1;
 
 					if(bonuskan_tousi == 0) {
@@ -363,9 +371,9 @@
 					break;
 				case 'creg':
 					n_creg++;
-					out_maisu += 2;
+					out_maisu += mai_cherry;
 					out_maisu += mai_reg - 1;
-					samai += 2;
+					samai += mai_cherry;
 					samai += mai_reg - 1;
 
 					if(bonuskan_tousi == 0) {
@@ -477,7 +485,7 @@
 		output += '</tbody></table><p><span class="big">BIG</span>:' + n_big + '回' + big_bunbo + ', 単独:' + n_tbig + '回' + tbig_bunbo + ', ﾁｪﾘｰ重複:' + n_cbig + '回' + cbig_bunbo;
 		output += '<br>REG:' + n_reg + '回' + reg_bunbo + ', 単独:' + n_treg + '回' + treg_bunbo + ', ﾁｪﾘｰ重複:' + n_creg + '回' + creg_bunbo;
 		output += '<br>ﾎﾞｰﾅｽ合算:' + gassan_bunbo + ', ぶどう:' + grape_bunbo;
-		output += '<br>投資:' + tousi + '円, 獲得枚数:' + samai + '枚, 収支:' + (Math.round(((samai*1000/koukan)-tousi)/100)*100) + '円, 出玉率:' + Math.round((out_maisu/in_maisu)*1000)/10 + '%</p>';
+		output += '<br>投資:' + tousi + '円, 獲得枚数:' + samai + '枚, 収支:' + (Math.round(((samai*1000/koukan)-tousi)/100)*100) + '円, 出玉率:' + (Math.round((out_maisu/in_maisu)*1000)/10).toFixed(1) + '%</p>';
 
 		if(document.getElementById('settei').value === 'r') {
 			output += '<p class="r">' + settei + '</p>';
