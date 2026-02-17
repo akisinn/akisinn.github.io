@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>利益計算ツール</title>
+	<link rel="stylesheet" href="dist/css/mycss.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>利益計算ツール</h1>
+		</div>
+	</header>
+
+	<section>
+		<div class="container">
+			
+			<div class="flex reset">
+				<label for="samai">販売価格</label>
+				<input type="tel" size="4" maxlength="10" name="kakaku" id="kakaku" onclick="this.select(0,this.value.length);">
+			</div>
+
+			<div class="flex reset">
+				<label for="samai">原価</label>
+				<input type="tel" size="4" maxlength="10" name="genka" id="genka" onclick="this.select(0,this.value.length);">
+			</div>
+
+			<div class="flex_radio">
+				送料
+				<input type="radio" name="haisou" class="haisou" id="h1" value="730" checked><label for="h1">730</label>
+				<input type="radio" name="haisou" class="haisou" id="h2" value="455"><label for="h2">455</label>
+				<input type="radio" name="haisou" class="haisou" id="h3" value="160"><label for="h3">160</label>
+			</div>
+
+			<div class="flex_radio">
+				手数料
+				<input type="radio" name="tesuu" class="tesuu" id="t1" value="0.1" checked><label for="t1">10%</label>
+				<input type="radio" name="tesuu" class="tesuu" id="t2" value="0.05"><label for="t2">5%</label>
+			</div>
+
+			<div id="input_form"></div>
+
+ 			<p class="flex"><button type="button" id="keisan">利益計算</button>　<button type="reset" id="reset">リセット</button></p>
+
+			<div id="output"></div>
+		</div>
+	</section>
+
+	<footer>
+		Copyright &copy; <script type="text/javascript">myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);</script> <a href="https://akicompany.com/" target="_blank">akicompany</a>. All Rights Reserved.
+	</footer>
+	<script src="dist/js/jquery.min.js"></script>
+	<script src="dist/js/myjs.js"></script>
+</body>
+</html>
