@@ -53,6 +53,20 @@ select {
   background: #333;
 }
 
+.flex_radio {
+  display: flex;
+  padding-top: 10px;
+}
+
+.flex_radio > .rowlabel {
+  width: 100px;
+  flex: 0 0 auto;
+}
+
+.flex_radio label {
+  margin-right: 10px;
+}
+
 button {
   justify-content: space-between;
   font-size: 14px;
@@ -65,48 +79,6 @@ button {
   text-align: center;
   cursor: pointer;
   border: none;
-}
-
-.scroll {
-  overflow: auto;
-  white-space: nowrap;  
-}
-
-.scroll::-webkit-scrollbar {
-  height: 5px;
-}
-
-.scroll::-webkit-scrollbar-track {
-  background: #F1F1F1;
-}
-
-.scroll::-webkit-scrollbar-thumb {
-  background: #BCBCBC;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-th {
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
-td {
-  border: 1px solid #ccc;
-}
-
-.r {
-  background-color: #FF7F7F;
-}
-
-.g {
-  background-color: #5AB590;
-}
-
-.y {
-  background-color: #E2D371;
 }
 
 /* header */
