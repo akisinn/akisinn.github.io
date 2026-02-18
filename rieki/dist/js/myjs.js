@@ -44,7 +44,7 @@
 		var mokuhyou_kakaku0 = (genka + haisou) / (1 - tesuu - mokuhyou_riekiritu);
 		var mokuhyou_genka0 = kakaku * (1 - tesuu - mokuhyou_riekiritu) - haisou;
 
-		var output = '利益:' + rieki + ', 利益率:' + riekiritu.toFixed(1) + '%<br>';
+		var output = '利益:' + rieki.toFixed(0) + ', 利益率:' + riekiritu.toFixed(1) + '%<br>';
 		output += '目標価格:[30%]' + mokuhyou_kakaku30.toFixed(0) + ' [20%]' + mokuhyou_kakaku20.toFixed(0) + ' [10%]' + mokuhyou_kakaku10.toFixed(0) + ' [0%]' + mokuhyou_kakaku0.toFixed(0) + '<br>';
 		output += '目標原価:[30%]' + mokuhyou_genka30.toFixed(0) + ' [20%]' + mokuhyou_genka20.toFixed(0) + ' [10%]' + mokuhyou_genka10.toFixed(0) + ' [0%]' + mokuhyou_genka0.toFixed(0);
 
