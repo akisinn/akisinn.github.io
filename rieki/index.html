@@ -17,7 +17,6 @@
 
 	<section>
 		<div class="container">
-			
 			<div class="flex reset">
 				<label for="kakaku">販売価格</label>
 				<input type="tel" size="4" maxlength="10" name="kakaku" id="kakaku" onclick="this.select(0,this.value.length);">
@@ -29,14 +28,14 @@
 			</div>
 
 			<div class="flex_radio">
-				送料
+				<span class="rowlabel">送料</span>
 				<input type="radio" name="haisou" class="haisou" id="h1" value="730" checked><label for="h1">730</label>
 				<input type="radio" name="haisou" class="haisou" id="h2" value="455"><label for="h2">455</label>
 				<input type="radio" name="haisou" class="haisou" id="h3" value="160"><label for="h3">160</label>
 			</div>
 
 			<div class="flex_radio">
-				手数料
+				<span class="rowlabel">手数料</span>
 				<input type="radio" name="tesuu" class="tesuu" id="t1" value="0.1" checked><label for="t1">10%</label>
 				<input type="radio" name="tesuu" class="tesuu" id="t2" value="0.05"><label for="t2">5%</label>
 			</div>
