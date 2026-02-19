@@ -5,11 +5,7 @@
 		keisan();
 	}
 
-	$('input:radio[name="haisou"]').change(function() {
-		keisan();
-	});
-
-	$('input:radio[name="tesuu"]').change(function() {
+	$('input:radio').change(function() {
 		keisan();
 	});
 
@@ -25,8 +21,11 @@
 	function keisan() {
 		var kakaku = Number(document.getElementById('kakaku').value);
 		var genka = Number(document.getElementById('genka').value);
+		var nebiki = Number($('input:radio[name="nebiki"]:checked').val());
 		var haisou = Number($('input:radio[name="haisou"]:checked').val());
 		var tesuu = Number($('input:radio[name="tesuu"]:checked').val());
+
+		genka = genka * nebiki;
 
 		var rieki = kakaku - genka - haisou - (kakaku * tesuu);
 		var riekiritu = (rieki / kakaku) * 100;
@@ -53,6 +52,7 @@
 
 	function reset() {
 		$(".reset > input").val("");
+		document.getElementsByName("nebiki")[0].checked = true;
 		document.getElementsByName("haisou")[0].checked = true;
 		document.getElementsByName("tesuu")[0].checked = true;
 	}
