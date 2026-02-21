@@ -2,8 +2,13 @@
 	'use strict';
 
 	window.onload = function() {
+		reset();
 		keisan();
 	}
+
+	document.getElementById('nebiki').addEventListener('change', function() {
+		keisan();
+	});
 
 	$('input:radio').change(function() {
 		keisan();
@@ -21,7 +26,7 @@
 	function keisan() {
 		var kakaku = Number(document.getElementById('kakaku').value);
 		var genka = Number(document.getElementById('genka').value);
-		var nebiki = Number($('input:radio[name="nebiki"]:checked').val());
+		var nebiki = Number(document.getElementById('nebiki').options[document.getElementById('nebiki').selectedIndex].value);
 		var haisou = Number($('input:radio[name="haisou"]:checked').val());
 		var tesuu = Number($('input:radio[name="tesuu"]:checked').val());
 
@@ -52,7 +57,7 @@
 
 	function reset() {
 		$(".reset > input").val("");
-		document.getElementsByName("nebiki")[0].checked = true;
+		document.getElementById("nebiki").selectedIndex = 0;
 		document.getElementsByName("haisou")[0].checked = true;
 		document.getElementsByName("tesuu")[0].checked = true;
 	}
