@@ -3,7 +3,7 @@
 /* common */
 
 body {
-  font-size: 14px;
+  font-size: 16px;
   font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -11,50 +11,547 @@ body {
   background: #f8f8f8;
 }
 
+p {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 90%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-section h2 {
-  margin: 0;
-  padding: 0;
-}
-
-section div.header {
-  background: #003366;
-  color: white;
-  width: 100%;
-  line-height: 30px;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-}
-
-section a {
-  color: #333;
-  width: 100%;
-  line-height: 90px;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-}
-
-section:nth-child(even) {
+section {
+  padding: 12px 0;
   background: #fff;
+  scroll-margin-top: 108px;
 }
 
-section:hover {
-  background: gold;
-  transition: all 0.5s ease 0s;
+/* グリッドレイアウト：日付列 + コンテンツ列 */
+section .container {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  column-gap: 20px;
+  align-items: stretch;
+}
+
+section .container details {
+  grid-column: 2;
+  min-width: 0;
+}
+
+/* 日付 */
+.tl-date {
+  grid-column: 1;
+  align-self: stretch;
+  text-align: right;
+  font-size: 0.82em;
+  font-weight: bold;
+  color: #999;
+  line-height: 1.4;
+  white-space: nowrap;
+  padding-top: 8px;
+  border-right: 2px solid #ddd;
+  padding-right: 12px;
+}
+
+/* タイトル（summary） */
+summary.tl-title {
+  cursor: pointer;
+  list-style: none;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+summary.tl-title::-webkit-details-marker {
+  display: none;
+}
+
+summary.tl-title h2 {
+  margin: 0;
+  font-size: 1.05em;
+  color: #444;
+}
+
+summary.tl-title::after {
+  content: '▸';
+  color: #ccc;
+  font-size: 0.8em;
+  flex-shrink: 0;
+  margin-left: 8px;
+  transition: transform 0.15s;
+}
+
+details[open] > summary.tl-title::after {
+  transform: rotate(90deg);
+}
+
+summary.tl-title:hover h2 {
+  color: #222;
+}
+
+/* 本文カード */
+.tl-body {
+  background: #fafafa;
+  border: 1px solid #ebebeb;
+  border-left: 4px solid #d0d0d0;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin-bottom: 4px;
+}
+
+.tl-body p {
+  margin: 0.4em 0;
+}
+
+/* リスト前のラベル段落（代表曲・出演者・曲目） */
+.tl-body p:has(+ ul),
+.tl-body .tl-label {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: #aaa;
+  letter-spacing: 0.06em;
+  margin: 10px 0 2px;
+}
+
+/* メンバーアイコン行 */
+.tl-body p:has(.maru) {
+  padding-top: 8px;
+  margin-top: 6px;
+  border-top: 1px dotted #eee;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-items: center;
+}
+
+/* ul.head — 代表曲・出演者・曲目共通 */
+.tl-body ul.head {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4px;
+}
+
+.tl-body ul.head li {
+  padding: 3px 0 3px 1.4em;
+  position: relative;
+  font-size: 0.88em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.tl-body ul.head li::before {
+  content: '♪';
+  position: absolute;
+  left: 0;
+  color: #ccc;
+  font-size: 0.85em;
+  top: 4px;
+}
+
+/* メンバーアイコンを含む li（出演者行） */
+.tl-body ul.head li:has(.maru) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding-left: 0;
+}
+
+.tl-body ul.head li:has(.maru)::before {
+  content: none;
+}
+
+/* プレーンul（出演者/曲目インライン形式） */
+.tl-body ul:not(.head) {
+  list-style: none;
+  padding: 8px 14px;
+  margin: 8px 0 0;
+  border-left: 3px solid #e0e0e0;
+  border-radius: 0 4px 4px 0;
+  background: rgba(0,0,0,0.02);
+}
+
+.tl-body ul:not(.head) li {
+  padding: 4px 0;
+  font-size: 0.88em;
+  color: #555;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+  line-height: 1.6;
+}
+
+.tl-body ul:not(.head) li + li {
+  border-top: 1px solid #eee;
+  margin-top: 2px;
+}
+
+section.l .tl-body ul:not(.head) {
+  border-left-color: #e8b070;
+}
+
+/* 年ヘッダー */
+
+.year-divider {
+  position: sticky;
+  top: 68px;
+  z-index: 50;
+  background: #f0f0f0;
+  border-top: 3px solid #ccc;
+  border-bottom: 1px solid #ddd;
+}
+
+.year-divider .container {
+  font-size: 1.5em;
+  font-weight: 900;
+  color: #bbb;
+  padding: 4px 0;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.live-count {
+  font-size: 0.5em;
+  font-weight: 600;
+  color: #e8a040;
+  letter-spacing: 0.02em;
+}
+
+section.l {
+  background: #fffdf5;
+}
+
+section.l .tl-body {
+  background: #fffef5;
+  border-color: #ebebeb;
+  border-left-color: #e8a040;
+}
+
+section.special {
+  background: #fff5f5;
+}
+
+section.special .tl-body {
+  background: #fff5f5;
+  border-left-color: #d04040;
+}
+
+section.yokoku {
+  background: #fff8fa;
+}
+
+section.yokoku .tl-body {
+  background: #fff8fa;
+  border-color: #ebebeb;
+  border-left-color: #e080a0;
+}
+
+.maru {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  vertical-align: middle;
+  background: #fff;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  margin: 3px 2px;
+  flex-shrink: 0;
+}
+
+.ckyo {
+  color: salmon;
+  border-color: salmon;
+}
+
+.cmiy {
+  color: lightgrey;
+  border-color: lightgrey;
+}
+
+.caki {
+  color: orange;
+  border-color: orange;
+}
+
+.cmar {
+  color: purple;
+  border-color: purple;
+}
+
+.cchi {
+  color: mediumseagreen;
+  border-color: mediumseagreen;
+}
+
+.cwat {
+  color: slategray;
+  border-color: slategray;
+}
+
+.csab {
+  color: green;
+  border-color: green;
+}
+
+.caka {
+  color: maroon;
+  border-color: maroon;
+}
+
+.cmis {
+  color: darkturquoise;
+  border-color: darkturquoise;
+}
+
+.cnan {
+  color: steelblue;
+  border-color: steelblue;
+}
+
+.csuz {
+  color: dodgerblue;
+  border-color: dodgerblue;
+}
+
+.ckao {
+  color: khaki;
+  border-color: khaki;
+}
+
+.cyui {
+  color: black;
+  border-color: black;
+}
+
+.cacc {
+  color: indigo;
+  border-color: indigo;
+}
+
+.cren {
+  color: pink;
+  border-color: pink;
+}
+
+.cyok {
+  color: midnightblue;
+  border-color: midnightblue;
+}
+
+.cpai {
+  color: gainsboro;
+  border-color: gainsboro;
+}
+
+.ccaf {
+  color: saddlebrown;
+  border-color: saddlebrown;
+}
+
+.cykk {
+  color: darkolivegreen;
+  border-color: darkolivegreen;
+}
+
+.cqoo {
+  color: aqua;
+  border-color: aqua;
+}
+
+.caya {
+  color: tan;
+  border-color: tan;
+}
+
+.cmai {
+  color: gold;
+  border-color: gold;
+}
+
+.cmit {
+  color: mediumvioletred;
+  border-color: mediumvioletred;
+}
+
+.cbet {
+  color: gray;
+  border-color: gray;
+}
+
+.cfun {
+  color: yellow;
+  border-color: yellow;
+}
+
+.cnao {
+  color: lightslategray;
+  border-color: lightslategray;
+}
+
+.chir {
+  color: orangered;
+  border-color: orangered;
+}
+
+.csec {
+  color: palevioletred;
+  border-color: palevioletred;
+}
+
+.cami {
+  color: blueviolet;
+  border-color: blueviolet;
+}
+
+.casami {
+  color: cadetblue;
+  border-color: cadetblue;
+}
+
+.cmaki {
+  color: sienna;
+  border-color: sienna;
+}
+
+.ctakako {
+  color: slateblue;
+  border-color: slateblue;
+}
+
+.cnaako {
+  color: firebrick;
+  border-color: firebrick;
+}
+
+.cnapi {
+  color: crimson;
+  border-color: crimson;
+}
+
+.ckarin {
+  color: darkorange;
+  border-color: darkorange;
+}
+
+.cusapon {
+  color: lavender;
+  border-color: lavender;
+}
+
+.crumi {
+  color: mediumvioletred;
+  border-color: mediumvioletred;
+}
+
+.csurin {
+  color: steelblue;
+  border-color: steelblue;
+}
+
+.chikari {
+  color: royalblue;
+  border-color: royalblue;
+}
+
+.cmonita {
+  color: rosybrown;
+  border-color: rosybrown;
+}
+
+.csaku {
+  color: hotpink;
+  border-color: hotpink;
+}
+
+.csumi {
+  color: plum;
+  border-color: plum;
+}
+
+.cyuki {
+  color: lightsteelblue;
+  border-color: lightsteelblue;
+}
+
+.charo {
+  color: darkcyan;
+  border-color: darkcyan;
 }
 
 /* header */
 
 header h1 {
-  text-align: center;
-  font-family: 'Nunito', Verdana, sans-serif;
   margin: 30px 0;
+}
+
+/* 年ナビゲーション */
+
+.year-nav {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.year-nav .container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.year-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.year-nav a,
+.year-nav button,
+.year-nav .nav-btn {
+  font-size: 0.8em;
+  color: #888;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.year-nav a:hover,
+.year-nav button:hover,
+.year-nav .nav-btn:hover {
+  background: #555;
+  color: #fff;
+  border-color: #555;
 }
 
 /* footer */
@@ -63,4 +560,51 @@ footer {
   text-align: center;
   color: #ccc;
   padding: 30px 0;
+}
+
+/* スマホ対応 */
+
+@media (max-width: 520px) {
+  body {
+    font-size: 15px;
+  }
+
+  section .container {
+    grid-template-columns: 72px 1fr;
+    column-gap: 12px;
+  }
+
+  .tl-date {
+    font-size: 0.75em;
+    padding-right: 8px;
+  }
+
+  section {
+    scroll-margin-top: 90px;
+  }
+
+  .year-divider {
+    top: 52px;
+  }
+
+  .year-nav a,
+  .year-nav button,
+  .year-nav .nav-btn {
+    font-size: 0.75em;
+    padding: 4px 7px;
+  }
+
+  summary.tl-title h2 {
+    font-size: 0.97em;
+  }
+
+  .tl-body {
+    padding: 10px 12px;
+  }
+
+  .maru {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9em;
+  }
 }
