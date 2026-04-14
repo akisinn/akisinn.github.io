@@ -156,6 +156,12 @@ summary.tl-title:hover h2 {
   top: 4px;
 }
 
+/* チーム名を含む li（チーム行）：チーム名を1行目に */
+.tl-body ul.head li:has(.maru) b {
+  flex-basis: 100%;
+  padding-bottom: 2px;
+}
+
 /* メンバーアイコンを含む li（出演者行） */
 .tl-body ul.head li:has(.maru) {
   display: flex;
@@ -224,8 +230,10 @@ section.l .tl-body ul:not(.head) {
 .live-count {
   font-size: 0.5em;
   font-weight: 600;
-  color: #e8a040;
+  color: #bbb;
   letter-spacing: 0.02em;
+  position: relative;
+  bottom: 4px;
 }
 
 section.l {
@@ -554,6 +562,12 @@ header h1 {
   border-color: #555;
 }
 
+.year-links a.active {
+  background: #555;
+  color: #fff;
+  border-color: #555;
+}
+
 /* footer */
 
 footer {
@@ -570,7 +584,7 @@ footer {
   }
 
   section .container {
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 92px 1fr;
     column-gap: 12px;
   }
 
@@ -580,18 +594,57 @@ footer {
   }
 
   section {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 108px;
   }
 
   .year-divider {
-    top: 52px;
+    top: 68px;
+  }
+
+  /* 年ナビ：横スクロール1行に */
+  .year-nav {
+    padding: 6px 0;
+  }
+
+  .year-nav .container {
+    gap: 4px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .year-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+    mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+  }
+
+  .year-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-actions {
+    flex-wrap: nowrap;
+  }
+
+  .nav-actions a,
+  .nav-actions button {
+    flex: 1;
+    text-align: center;
   }
 
   .year-nav a,
   .year-nav button,
   .year-nav .nav-btn {
-    font-size: 0.75em;
-    padding: 4px 7px;
+    font-size: 0.78em;
+    padding: 5px 9px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   summary.tl-title h2 {
@@ -605,6 +658,6 @@ footer {
   .maru {
     width: 30px;
     height: 30px;
-    font-size: 0.9em;
+    font-size: 0.9rem;
   }
 }
