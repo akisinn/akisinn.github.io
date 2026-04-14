@@ -28,7 +28,7 @@ a {
 section {
   padding: 12px 0;
   background: #fff;
-  scroll-margin-top: 108px;
+  scroll-margin-top: 112px;
 }
 
 /* グリッドレイアウト：日付列 + コンテンツ列 */
@@ -243,6 +243,22 @@ section.l .tl-body ul:not(.head) {
   bottom: 4px;
 }
 
+section.l summary.tl-title h2::before {
+  content: 'LIVE';
+  display: inline-block;
+  background: #e8a040;
+  color: #fff;
+  font-size: 0.58em;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 7px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
 section.l {
   background: #fffdf5;
 }
@@ -251,6 +267,22 @@ section.l .tl-body {
   background: #fffef5;
   border-color: #ebebeb;
   border-left-color: #e8a040;
+}
+
+section.special summary.tl-title h2::before {
+  content: 'LIVE';
+  display: inline-block;
+  background: #d04040;
+  color: #fff;
+  font-size: 0.58em;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 7px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
 }
 
 section.special {
@@ -534,16 +566,60 @@ header h1 {
   gap: 5px;
 }
 
+.year-links-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.year-scroll-btn {
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #888;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.year-scroll-btn:hover {
+  background: #555;
+  color: #fff;
+  border-color: #555;
+}
+
 .year-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8px, black calc(100% - 8px), transparent);
+  mask-image: linear-gradient(to right, transparent, black 8px, black calc(100% - 8px), transparent);
+  flex: 1;
+  min-width: 0;
+}
+
+.year-links::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 4px;
+}
+
+.nav-actions a,
+.nav-actions button {
+  flex: 1;
+  text-align: center;
 }
 
 .year-nav a,
@@ -601,7 +677,7 @@ footer {
   }
 
   section {
-    scroll-margin-top: 108px;
+    scroll-margin-top: 112px;
   }
 
   .year-divider {
@@ -619,30 +695,6 @@ footer {
     max-width: 100%;
     padding: 0 8px;
     box-sizing: border-box;
-  }
-
-  .year-links {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 2px;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
-    mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
-  }
-
-  .year-links::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-actions {
-    flex-wrap: nowrap;
-  }
-
-  .nav-actions a,
-  .nav-actions button {
-    flex: 1;
-    text-align: center;
   }
 
   .year-nav a,
