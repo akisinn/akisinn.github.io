@@ -162,6 +162,13 @@ summary.tl-title:hover h2 {
   padding-bottom: 2px;
 }
 
+.tdesc {
+  font-weight: normal;
+  font-size: 0.85em;
+  color: #aaa;
+  margin-left: 4px;
+}
+
 /* メンバーアイコンを含む li（出演者行） */
 .tl-body ul.head li:has(.maru) {
   display: flex;
