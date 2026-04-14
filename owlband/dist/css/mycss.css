@@ -101,6 +101,7 @@ summary.tl-title:hover h2 {
 .tl-body {
   background: #fafafa;
   border: 1px solid #ebebeb;
+  border-top: none;
   border-left: 4px solid #d0d0d0;
   border-radius: 0 6px 6px 0;
   padding: 12px 16px;
@@ -121,10 +122,8 @@ summary.tl-title:hover h2 {
   margin: 10px 0 2px;
 }
 
-/* メンバーアイコン行 */
+/* メンバーアイコン行（インライン） */
 .tl-body p:has(.maru) {
-  padding-top: 8px;
-  margin-top: 6px;
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
