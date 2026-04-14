@@ -125,7 +125,6 @@ summary.tl-title:hover h2 {
 .tl-body p:has(.maru) {
   padding-top: 8px;
   margin-top: 6px;
-  border-top: 1px dotted #eee;
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
@@ -204,7 +203,6 @@ summary.tl-title:hover h2 {
 }
 
 .tl-body ul:not(.head) li + li {
-  border-top: 1px solid #eee;
   margin-top: 2px;
 }
 
