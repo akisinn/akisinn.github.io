@@ -202,7 +202,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2014<span class="live-count">ライブ1回</span></div></div>
+		<div class="year-divider"><div class="container">2014</div></div>
 		<section id="y2014">
 			<div class="container">
 			<div class="tl-date">2014/1</div>
@@ -293,7 +293,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2015<span class="live-count">ライブ3回</span></div></div>
+		<div class="year-divider"><div class="container">2015</div></div>
 		<section class="l" id="y2015">
 			<div class="container">
 			<div class="tl-date">2015/2/1</div>
@@ -423,7 +423,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2016<span class="live-count">ライブ4回</span></div></div>
+		<div class="year-divider"><div class="container">2016</div></div>
 		<section class="l" id="y2016">
 			<div class="container">
 			<div class="tl-date">2016/1/6</div>
@@ -619,7 +619,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2017<span class="live-count">ライブ3回</span></div></div>
+		<div class="year-divider"><div class="container">2017</div></div>
 		<section id="y2017">
 			<div class="container">
 			<div class="tl-date">2017/1</div>
@@ -816,7 +816,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2018<span class="live-count">ライブ5回</span></div></div>
+		<div class="year-divider"><div class="container">2018</div></div>
 		<section id="y2018">
 			<div class="container">
 			<div class="tl-date">2018/1</div>
@@ -1049,7 +1049,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2019<span class="live-count">ライブ9回</span></div></div>
+		<div class="year-divider"><div class="container">2019</div></div>
 		<section class="l" id="y2019">
 			<div class="container">
 			<div class="tl-date">2019/1/26</div>
@@ -1326,7 +1326,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2020<span class="live-count">ライブ5回</span></div></div>
+		<div class="year-divider"><div class="container">2020</div></div>
 		<section class="l" id="y2020">
 			<div class="container">
 			<div class="tl-date">2020/2/1</div>
@@ -1454,7 +1454,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2021<span class="live-count">ライブ10回</span></div></div>
+		<div class="year-divider"><div class="container">2021</div></div>
 		<section class="l" id="y2021">
 			<div class="container">
 			<div class="tl-date">2021/1/23</div>
@@ -1701,7 +1701,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2022<span class="live-count">ライブ7回</span></div></div>
+		<div class="year-divider"><div class="container">2022</div></div>
 		<section class="l" id="y2022">
 			<div class="container">
 			<div class="tl-date">2022/2/12</div>
@@ -1890,7 +1890,7 @@
 		</section>
 
 		
-		<div class="year-divider"><div class="container">2023<span class="live-count">ライブ14回</span></div></div>
+		<div class="year-divider"><div class="container">2023</div></div>
 		<section class="l" id="y2023">
 			<div class="container">
 			<div class="tl-date">2023/1/15</div>
@@ -2287,7 +2287,7 @@
 
 		<a name="end">
 
-		<div class="year-divider"><div class="container">2024<span class="live-count">ライブ12回</span></div></div>
+		<div class="year-divider"><div class="container">2024</div></div>
 		<section class="l" id="y2024">
 			<div class="container">
 			<div class="tl-date">2024/1/25</div>
@@ -2551,7 +2551,7 @@
 			</div>
 		</section>
 
-		<div class="year-divider"><div class="container">2025<span class="live-count">ライブ10回</span></div></div>
+		<div class="year-divider"><div class="container">2025</div></div>
 		<section class="l" id="y2025">
 			<div class="container">
 			<div class="tl-date">2025/1/18</div>
@@ -2780,7 +2780,7 @@
 			</div>
 		</section>
 
-		<div class="year-divider"><div class="container">2026<span class="live-count">ライブ5回</span></div></div>
+		<div class="year-divider"><div class="container">2026</div></div>
 		<section class="l" id="y2026">
 			<div class="container">
 			<div class="tl-date">2026/1/25</div>
@@ -2958,6 +2958,24 @@
     });
   }, { rootMargin: '-10% 0px -80% 0px' });
   yearSections.forEach(el => observer.observe(el));
+
+  // 年ヘッダーのライブ回数を自動計算
+  document.querySelectorAll('.year-divider').forEach(divider => {
+    let count = 0;
+    let el = divider.nextElementSibling;
+    while (el && !el.classList.contains('year-divider')) {
+      if (el.tagName === 'SECTION' && (el.classList.contains('l') || el.classList.contains('special'))) {
+        count++;
+      }
+      el = el.nextElementSibling;
+    }
+    if (count > 0) {
+      const span = document.createElement('span');
+      span.className = 'live-count';
+      span.textContent = 'ライブ' + count + '回';
+      divider.querySelector('.container').appendChild(span);
+    }
+  });
 
   // 年リンク左右スクロールボタン
   const yearLinksEl = document.getElementById('yearLinks');
