@@ -323,7 +323,7 @@ section.yokoku .tl-body {
 /* 説明文中のアイコンを少し下に */
 .tl-body p .maru {
   position: relative;
-  top: 5px;
+  top: 7px;
   margin: 0 2px;
 }
 
