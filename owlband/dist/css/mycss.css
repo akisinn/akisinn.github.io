@@ -320,9 +320,9 @@ section.yokoku .tl-body {
   flex-shrink: 0;
 }
 
-/* 説明文中のアイコンを少し上に */
+/* 説明文中のアイコンを少し下に */
 .tl-body p .maru {
-  vertical-align: text-top;
+  vertical-align: text-bottom;
   margin: 0 2px;
 }
 
