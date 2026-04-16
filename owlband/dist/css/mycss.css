@@ -320,12 +320,6 @@ section.yokoku .tl-body {
   flex-shrink: 0;
 }
 
-/* 説明文中のアイコンを少し下に */
-.tl-body p .maru {
-  position: relative;
-  top: 8px;
-  margin: 0 2px;
-}
 
 .ckyo {
   color: salmon;
